@@ -7,17 +7,17 @@ import java.awt.*; // goes along with awt... used to change fonts, colors...
 // import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.Scanner; // Simple scanner
+// import java.util.Scanner; // Simple scanner
 
 // Starting with a Main class...
 
 public class Main {
     public static void main(String[] args) throws InterruptedException { // InterruptedException for thread.sleep
-                                                                        // to work.
+        // to work.
 
         // Simple scanner to start...
 
-        Scanner scanner = new Scanner(System.in);
+        //Scanner scanner = new Scanner(System.in); # We dont need this, we are not printing in the console.
 
         // This is where the new window is created.
         //  JFrame is used so we can create the actual window
@@ -32,7 +32,7 @@ public class Main {
         // JTextArea is used to set up to display texts, inputs and outputs.
 
         JTextArea terminal = new JTextArea();
-        terminal.setBackground(new Color(0,0,139));
+        terminal.setBackground(new Color(0, 0, 139));
         terminal.setForeground(Color.white);
         terminal.setFont(new Font("Monospaced", Font.PLAIN, 14));
         terminal.setEditable(true);
@@ -46,6 +46,8 @@ public class Main {
         terminal.append("Ready...\n");
         terminal.append("> access \n");
 
+
+
         terminal.addKeyListener(new KeyAdapter() {
             private int attempts = 0;
             private int promptPosition = 0;
@@ -53,7 +55,7 @@ public class Main {
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    e. consume(); // Prevent newline from being added directly
+                    e.consume(); // Prevent newline from being added directly
 
                     try {
                         int caretPos = terminal.getCaretPosition();
@@ -125,64 +127,58 @@ public class Main {
 //        });
 //
 
+        JFrame frame = new JFrame();
 
-        System.out.println("Jurassic Park, System Security Interface");
-        System.out.println("Version 3.0.5, Alpha E");
-        System.out.println("Ready...");
+        ImageIcon icon = new ImageIcon(Main.class.getResource("/magicword2.gif"));
 
-        String userInput;
+        JLabel label = new JLabel(icon);
 
-
-
-        for (int counter = 0; counter < 3; counter++) {
-            System.out.print("> access ");
-            userInput = scanner.nextLine();
-
-            if (userInput.equals("fwthadtr")) {
-                System.out.println("Access Granted");
-                return;
-            }
-            if (counter == 2) {
-                System.out.print("PERMISSION DENIED...");
-                Thread.sleep(800);
-                System.out.println("and...");
-                Thread.sleep(800);
-            } else {
-                Thread.sleep(800);
-                System.out.println("PERMISSION DENIED.");
-            }
-        }
-
-            JFrame frame = new JFrame();
-
-            ImageIcon icon = new ImageIcon(Main.class.getResource("/magicword2.gif"));
-
-            JLabel label = new JLabel(icon);
-
-
-
-            frame.add(label);
-            frame.pack();
-            frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-            frame.setVisible(true);
-            frame.setAlwaysOnTop(true);
-            frame.setState(JFrame.NORMAL);
-            frame.toFront();
-            frame.requestFocus();
-            frame.setLocationRelativeTo(null);
-
-            while (true) {
-                System.out.println("YOU DIDN'T SAY THE MAGIC WORD!");
-                System.out.println("YOU DIDN'T SAY THE MAGIC WORD!");
-                Thread.sleep(200);
+        frame.add(label);
+        frame.pack();
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+        frame.setAlwaysOnTop(true);
+        frame.setState(JFrame.NORMAL);
+        frame.toFront();
+        frame.requestFocus();
+        frame.setLocationRelativeTo(null); }
 }
 
-
-
-    }
-}
-
-
-
-
-
+//        System.out.println("Jurassic Park, System Security Interface");
+//        System.out.println("Version 3.0.5, Alpha E");
+//        System.out.println("Ready...");
+//
+//        String userInput;
+//
+//
+//
+//        for (int counter = 0; counter < 3; counter++) {
+//            System.out.print("> access ");
+//            userInput = scanner.nextLine();
+//
+//            if (userInput.equals("fwthadtr")) {
+//                System.out.println("Access Granted");
+//                return;
+//            }
+//            if (counter == 2) {
+//                System.out.print("PERMISSION DENIED...");
+//                Thread.sleep(800);
+//                System.out.println("and...");
+//                Thread.sleep(800);
+//            } else {
+//                Thread.sleep(800);
+//                System.out.println("PERMISSION DENIED.");
+//            }
+//        }
+//
+//
+//            while (true) {
+//                System.out.println("YOU DIDN'T SAY THE MAGIC WORD!");
+//                System.out.println("YOU DIDN'T SAY THE MAGIC WORD!");
+//                Thread.sleep(200);
+//}
+//
+//
+//
+//    }
+//}
