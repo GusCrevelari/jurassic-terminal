@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) throws InterruptedException { // InterruptedException for thread.sleep
         // to work.
 
-        // Simple scanner to start...
+        // Simple scanner to start... Commit Test
 
         //Scanner scanner = new Scanner(System.in); # We dont need this, we are not printing in the console.
 
