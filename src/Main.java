@@ -26,8 +26,8 @@ public class Main {
         JFrame terminalFrame = new JFrame("Central Park Control Console");
         terminalFrame.setIconImage(null);
         terminalFrame.setSize(1200, 768); // Width, Height
-        terminalFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         terminalFrame.setVisible(true); // ← This is what makes it pop up!
+        terminalFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // JTextArea is used to set up to display texts, inputs and outputs.
 
@@ -44,8 +44,7 @@ public class Main {
         terminal.append("Jurassic Park, System Security Interface\n");
         terminal.append("Version 3.0.5, Alpha E\n");
         terminal.append("Ready...\n");
-        terminal.append("> access \n");
-
+        terminal.append("> access ");
 
 
         terminal.addKeyListener(new KeyAdapter() {
@@ -72,10 +71,8 @@ public class Main {
                             if (attempts >= 3) {
                                 terminal.append("...and...\n");
                                 Thread.sleep(1000);
-                                terminal.append("YOU DIDN'T SAY THE MAGIC WORD!\n");
-                                terminal.append("YOU DIDN'T SAY THE MAGIC WORD!\n");
-                                Thread.sleep(400);
-                                // You can trigger the GIF popup here if you want
+                                GifLoop.startLoop(terminal);
+
                                 terminal.setEditable(false);
                                 return;
                             }
@@ -93,8 +90,8 @@ public class Main {
 
         });
 
-        // Then we need to make it ''inputable'' using JTextField....
-        // But here we are adding a new field right bellow the window, and that is not what we want.
+        // Then we need to make it ''inputable'' using 'JTextField'
+        // But here we are adding a new field right below the window, and that is not what we want.
 
 //        JTextField inputType = new JTextField();
 //
@@ -127,21 +124,22 @@ public class Main {
 //        });
 //
 
-        JFrame frame = new JFrame();
-
-        ImageIcon icon = new ImageIcon(Main.class.getResource("/magicword2.gif"));
-
-        JLabel label = new JLabel(icon);
-
-        frame.add(label);
-        frame.pack();
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-        frame.setAlwaysOnTop(true);
-        frame.setState(JFrame.NORMAL);
-        frame.toFront();
-        frame.requestFocus();
-        frame.setLocationRelativeTo(null); }
+//        JFrame frame = new JFrame();
+//
+//        ImageIcon icon = new ImageIcon(Main.class.getResource("/magicword2.gif"));
+//
+//        JLabel label = new JLabel(icon);
+//
+//        frame.add(label);
+//        frame.pack();
+//        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+//        frame.setVisible(true);
+//        frame.setAlwaysOnTop(true);
+//        frame.setState(JFrame.NORMAL);
+//        frame.toFront();
+//        frame.requestFocus();
+//        frame.setLocationRelativeTo(null); }
+    }
 }
 
 //        System.out.println("Jurassic Park, System Security Interface");
