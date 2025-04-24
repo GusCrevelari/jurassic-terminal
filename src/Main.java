@@ -26,7 +26,6 @@ public class Main {
         JFrame terminalFrame = new JFrame("Central Park Control Console");
         terminalFrame.setIconImage(null);
         terminalFrame.setSize(1200, 768); // Width, Height
-        terminalFrame.setVisible(true); // ← This is what makes it pop up!
         terminalFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // JTextArea is used to set up to display texts, inputs and outputs.
@@ -40,12 +39,15 @@ public class Main {
         // Added an actual terminal to the terminalFrame variable from above.
         // Append is used to actually show text
 
-        terminalFrame.add(terminal);
+        // Add terminal into a scroll pane
+        JScrollPane scrollPane = new JScrollPane(terminal);
+        terminalFrame.add(scrollPane, BorderLayout.CENTER);  // Add scrollPane, not terminal, to the frame
         terminal.append("Jurassic Park, System Security Interface\n");
         terminal.append("Version 3.0.5, Alpha E\n");
         terminal.append("Ready...\n");
         terminal.append("> access ");
 
+        terminalFrame.setVisible(true); // ← This is what makes it pop up! Need to be after everything
 
         terminal.addKeyListener(new KeyAdapter() {
             private int attempts = 0;
@@ -126,7 +128,7 @@ public class Main {
 
 //        JFrame frame = new JFrame();
 //
-//        ImageIcon icon = new ImageIcon(Main.class.getResource("/magicword2.gif"));
+//        ImageIcon icon = new ImageIcon(Main.class.getResource("/magicword.gif"));
 //
 //        JLabel label = new JLabel(icon);
 //
