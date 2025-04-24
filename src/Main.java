@@ -70,7 +70,7 @@ public class Main {
                             Thread.sleep(800);
                             if (attempts >= 3) {
                                 terminal.append("...and...\n");
-                                Thread.sleep(1000);
+                                Thread.sleep(800);
                                 GifLoop.startLoop(terminal);
 
                                 terminal.setEditable(false);
