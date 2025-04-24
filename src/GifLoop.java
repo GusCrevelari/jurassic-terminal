@@ -26,7 +26,7 @@ public class GifLoop {
             }
 
             JFrame frame = new JFrame();
-            ImageIcon icon = new ImageIcon(Objects.requireNonNull(Main.class.getResource("/magicword.gif")));
+            ImageIcon icon = new ImageIcon(Objects.requireNonNull(Main.class.getResource("/nerdy.gif")));
             JLabel label = new JLabel(icon);
             frame.add(label);
             frame.pack();

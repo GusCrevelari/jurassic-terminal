@@ -68,7 +68,7 @@ public class Main {
                             terminal.setEditable(false);
                         } else {
                             attempts++;
-                            terminal.append("\nPERMISSION DENIED");
+                            terminal.append("\naccess: PERMISSION DENIED");
                             Thread.sleep(1000);
                             if (attempts >= 3) {
                                 terminal.append("...and...\n");
@@ -128,7 +128,7 @@ public class Main {
 
 //        JFrame frame = new JFrame();
 //
-//        ImageIcon icon = new ImageIcon(Main.class.getResource("/magicword.gif"));
+//        ImageIcon icon = new ImageIcon(Main.class.getResource("/nerdy.gif"));
 //
 //        JLabel label = new JLabel(icon);
 //
