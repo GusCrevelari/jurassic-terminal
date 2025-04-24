@@ -6,8 +6,21 @@ public class GifLoop {
     public static void startLoop(JTextArea terminal) {
 
         new Thread(() -> {
+            while (true) {
+                terminal.append("YOU DIDN'T SAY THE MAGIC WORD!\n");
+                terminal.setCaretPosition(terminal.getDocument().getLength());
+
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
+        new Thread(() -> {
             try {
-                Thread.sleep(2000);  // Wait before showing the GIF
+                Thread.sleep(3000);  // Wait before showing the GIF
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -25,18 +38,6 @@ public class GifLoop {
             frame.requestFocus();
             frame.setLocationRelativeTo(null);
 
-            new Thread(() -> {
-                while (true) {
-                    terminal.append("YOU DIDN'T SAY THE MAGIC WORD!\n");
-                    terminal.setCaretPosition(terminal.getDocument().getLength());
-
-                    try {
-                        Thread.sleep(50);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }).start();
 
         }).start();
 

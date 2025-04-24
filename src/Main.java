@@ -33,7 +33,7 @@ public class Main {
         JTextArea terminal = new JTextArea();
         terminal.setBackground(new Color(0, 0, 139));
         terminal.setForeground(Color.white);
-        terminal.setFont(new Font("Monospaced", Font.PLAIN, 14));
+        terminal.setFont(new Font("Monospaced", Font.PLAIN, 18));
         terminal.setEditable(true);
 
         // Added an actual terminal to the terminalFrame variable from above.
@@ -69,10 +69,10 @@ public class Main {
                         } else {
                             attempts++;
                             terminal.append("\nPERMISSION DENIED");
-                            Thread.sleep(800);
+                            Thread.sleep(1000);
                             if (attempts >= 3) {
                                 terminal.append("...and...\n");
-                                Thread.sleep(800);
+                                Thread.sleep(1000);
                                 GifLoop.startLoop(terminal);
 
                                 terminal.setEditable(false);
