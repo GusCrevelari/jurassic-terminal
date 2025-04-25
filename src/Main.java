@@ -31,7 +31,7 @@ public class Main {
         // JTextArea is used to set up to display texts, inputs and outputs.
 
         JTextArea terminal = new JTextArea();
-        terminal.setBackground(new Color(0, 0, 139));
+        terminal.setBackground(new Color(0, 39, 139));
         terminal.setForeground(Color.white);
         terminal.setFont(new Font("Monospaced", Font.PLAIN, 18));
         terminal.setEditable(true);
