@@ -68,11 +68,13 @@ public class Main {
                             terminal.setEditable(false);
                         } else {
                             attempts++;
+                            SoundPlayer.playKeyboard("beep1.wav");
                             terminal.append("\naccess: PERMISSION DENIED.");
                             Thread.sleep(800);
                             if (attempts >= 3) {
                                 terminal.append("...and...\n");
-                                Thread.sleep(1000);
+                                Thread.sleep(1600);
+                                SoundPlayer.playKeyboardLoop("beep2.wav");
                                 GifLoop.startLoop(terminal);
                                 Thread.sleep(500);
 

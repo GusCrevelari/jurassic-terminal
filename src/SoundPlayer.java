@@ -30,4 +30,28 @@ public class SoundPlayer {
             e.printStackTrace();
         }
     }
+    public static void playKeyboard(String fileName) {
+        try {
+            URL soundURL = Main.class.getResource("/sound/beep1.wav");
+            assert soundURL != null;
+            AudioInputStream audioInput = AudioSystem.getAudioInputStream(soundURL);
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInput);
+            clip.start();
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void playKeyboardLoop(String fileName) {
+        try {
+            URL soundURL = Main.class.getResource("/sound/beep2.wav");
+            assert soundURL != null;
+            AudioInputStream audioInput = AudioSystem.getAudioInputStream(soundURL);
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInput);
+            clip.start();
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+            e.printStackTrace();
+        }
+    }
 }
