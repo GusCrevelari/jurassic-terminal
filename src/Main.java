@@ -45,7 +45,7 @@ public class Main {
         terminal.append("Jurassic Park, System Security Interface\n");
         terminal.append("Version 3.0.5, Alpha E\n");
         terminal.append("Ready...\n");
-        terminal.append("> access ");
+        terminal.append("> ");
 
         terminalFrame.setVisible(true); // ← This is what makes it pop up! Need to be after everything
 
@@ -68,18 +68,19 @@ public class Main {
                             terminal.setEditable(false);
                         } else {
                             attempts++;
-                            terminal.append("\naccess: PERMISSION DENIED");
-                            Thread.sleep(1000);
+                            terminal.append("\naccess: PERMISSION DENIED.");
+                            Thread.sleep(800);
                             if (attempts >= 3) {
                                 terminal.append("...and...\n");
                                 Thread.sleep(1000);
                                 GifLoop.startLoop(terminal);
+                                Thread.sleep(500);
 
                                 terminal.setEditable(false);
                                 return;
                             }
                         }
-                        terminal.append("\n> access ");
+                        terminal.append("\n> ");
                         promptPosition = terminal.getText().length();
                         terminal.setCaretPosition(terminal.getDocument().getLength());
                     } catch (BadLocationException ex) {

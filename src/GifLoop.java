@@ -41,6 +41,6 @@ public class GifLoop {
 
         }).start();
 
-        }
     }
+}
 
