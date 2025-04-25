@@ -9,8 +9,8 @@ public class SoundPlayer {
             URL soundURL = Main.class.getResource("/sound/magicWord.wav"); // Load the File
             assert soundURL != null;
             AudioInputStream audioInput = AudioSystem.getAudioInputStream(soundURL);// Reads the File
-            Clip clip = AudioSystem.getClip(); // Clip is like a cassete player
-            clip.open(audioInput); // Load the audioUInput into clip (Cassete)
+            Clip clip = AudioSystem.getClip(); // Clip is like a cassette player
+            clip.open(audioInput); // Load the audioUInput into clip (Cassette)
             clip.start();
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             e.printStackTrace();

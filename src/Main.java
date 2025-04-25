@@ -12,7 +12,7 @@ import java.awt.event.KeyEvent;
 // Starting with a Main class...
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException { // InterruptedException for thread.sleep
+    public static void main(String[] args) { // InterruptedException for thread.sleep
         // to work.
 
         // Simple scanner to start... Commit Test
