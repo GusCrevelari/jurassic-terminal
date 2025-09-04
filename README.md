@@ -1,5 +1,9 @@
 # Jurassic Park Security Interface
 
+## Project Video URL
+
+https://youtu.be/3tPPe_VXUqg
+
 ## Overview
 
 This project is my CS50 final project. It is a Java-based recreation of the iconic scene from *Jurassic Park (1993)* where Samuel L. Jackson’s character attempts to access the park’s computer system, only to be denied access by Dennis Nedry’s infamous “You didn’t say the magic word!” prank.  
